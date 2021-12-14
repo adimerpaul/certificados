@@ -15,6 +15,6 @@ class ParticipanteSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('participantes')->insert(['nombre'=>'juan lopez alcala','certificado_id'=>'1','hash'=>Hash::make('1')]);
+        DB::table('participantes')->insert(['nombre'=>'juan lopez alcala','certificado_id'=>'1','ci'=>'1010','hash'=>Hash::make('1')]);
     }
 }

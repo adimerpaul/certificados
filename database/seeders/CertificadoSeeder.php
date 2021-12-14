@@ -14,7 +14,7 @@ class CertificadoSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('certificados')->insert(['nombre'=>'CURSO APLICACIONES WEB','descripcion'=>'El curso contiene aplicaciones web','fecha'=>'2021-01-01','user_id'=>1]);
+        DB::table('certificados')->insert(['nombre'=>'CURSO APLICACIONES WEB','url'=>'caw','descripcion'=>'El curso contiene aplicaciones web','fecha'=>'2021-01-01','user_id'=>1]);
 //        $table->string('nombre');
 //        $table->string('descripcion');
 //        $table->date('fecha');

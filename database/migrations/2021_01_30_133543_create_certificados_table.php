@@ -16,6 +16,7 @@ class CreateCertificadosTable extends Migration
         Schema::create('certificados', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('url');
             $table->string('descripcion');
             $table->date('fecha');
             $table->unsignedBigInteger('user_id');

@@ -23,7 +23,7 @@ class UsersImport implements ToModel
     {
         return new \App\Models\Participante([
             'nombre'     => $row[0],
-//            'email'    => $row[1],
+            'ci'    => $row[1],
             'hash' => '',
             'certificado_id' => $this->id
         ]);

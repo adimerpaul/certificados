@@ -14,6 +14,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Nombre</th>
+                                    <th>Url</th>
                                     <th>Fecha</th>
                                     <th>Detalle</th>
                                     <th>Opciones</th>
@@ -23,6 +24,7 @@
                                 <tr v-for="(i, index) in certificados" :key="index">
                                     <td>{{index+1}}</td>
                                     <td>{{i.nombre}}</td>
+                                    <td>{{i.url}}</td>
                                     <td>{{i.fecha}}</td>
                                     <td>
 <!--                                        {{i.detalle}}-->
@@ -35,7 +37,7 @@
                                             <button type="button" @click="modificarcetificado(i)" data-toggle="modal" data-target="#update" class="btn btn-warning btn-sm"> <i class="fa fa-edit"></i> </button>
                                             <button type="button" @click="eliminarcetificado(i)" class="btn btn-danger btn-sm" > <i class="fa fa-trash"></i> </button>
                                             <button type="button" @click="participantes(i)" data-toggle="modal" data-target="#participantes" class="btn btn-info btn-sm"> <i class="fa fa-users"></i> </button>
-                                            <a href="certificado/1">ceriticados</a>
+<!--                                            <a href="certificado/1">ceriticados</a>-->
                                         </div>
                                     </td>
                                 </tr>
@@ -68,6 +70,12 @@
                                 <label for="descripcion" class="col-sm-2 col-form-label">Descripcion</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="descripcion" placeholder="Descripcion" v-model="certificado.descripcion">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="url" class="col-sm-2 col-form-label">Url</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="url" placeholder="Url" v-model="certificado.url">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -177,7 +185,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header  bg-warning">
-                        <h5 class="modal-title " id="exampleModalLabel3"><i class="fa fa-plus-circle"></i> Modificar curso</h5>
+                        <h5 class="modal-title " id="exampleModalLabel3"><i class="fa fa-plus-circle"></i> Estudiantes</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -198,15 +206,19 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Carnet de identidad</th>
                                     <th>Nombre Completo</th>
                                     <th>Certificado</th>
 <!--                                    <th>Opciones</th>-->
                                 </tr>
                                 <tr v-for="(i,index) in alu" :key="index">
                                     <td>{{i.id}}</td>
+                                    <td>{{i.ci}}</td>
                                     <td>{{i.nombre}}</td>
                                     <td>
-                                        <a type="button" :href="'../cer/'+i.id" target="_blank"  class="btn btn-dark btn-sm "><i class="fa fa-credit-card"></i> Certificado</a>
+<!--                                        :href="'../cer/'+i.id"-->
+                                        <a type="button"  :href="'../'+i.certificado.url+'/'+i.ci" target="_blank"  class="btn btn-dark btn-sm "><i class="fa fa-credit-card"></i> Certificado</a>
+<!--                                        {{i.certificado.url}}-->
                                     </td>
     <!--                                    <td>-->
 <!--                                        <div class="btn-group">-->

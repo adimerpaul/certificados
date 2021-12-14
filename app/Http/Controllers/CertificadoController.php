@@ -30,6 +30,7 @@ class CertificadoController extends Controller
     {
         $d=new Certificado();
         $d->nombre=$request->nombre;
+        $d->url=$request->url;
         $d->descripcion=$request->descripcion;
         $d->fecha=$request->fecha;
         $d->user_id=Auth::user()->id;

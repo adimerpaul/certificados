@@ -16,6 +16,7 @@ class CreateParticipantesTable extends Migration
         Schema::create('participantes', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string('ci')->default('');
             $table->string('hash');
             $table->unsignedBigInteger('certificado_id');
             $table->foreign('certificado_id')->references('id')->on('certificados');

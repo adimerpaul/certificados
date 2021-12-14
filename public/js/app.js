@@ -2113,6 +2113,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -41933,6 +41945,8 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(i.nombre))]),
                     _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(i.url))]),
+                    _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(i.fecha))]),
                     _vm._v(" "),
                     _c("td", [
@@ -41998,11 +42012,7 @@ var render = function() {
                             }
                           },
                           [_c("i", { staticClass: "fa fa-users" })]
-                        ),
-                        _vm._v(" "),
-                        _c("a", { attrs: { href: "certificado/1" } }, [
-                          _vm._v("ceriticados")
-                        ])
+                        )
                       ])
                     ])
                   ])
@@ -42125,6 +42135,49 @@ var render = function() {
                               _vm.$set(
                                 _vm.certificado,
                                 "descripcion",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-sm-2 col-form-label",
+                          attrs: { for: "url" }
+                        },
+                        [_vm._v("Url")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-sm-10" }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.certificado.url,
+                              expression: "certificado.url"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            id: "url",
+                            placeholder: "Url"
+                          },
+                          domProps: { value: _vm.certificado.url },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.certificado,
+                                "url",
                                 $event.target.value
                               )
                             }
@@ -42613,6 +42666,8 @@ var render = function() {
                             return _c("tr", { key: index }, [
                               _c("td", [_vm._v(_vm._s(i.id))]),
                               _vm._v(" "),
+                              _c("td", [_vm._v(_vm._s(i.ci))]),
+                              _vm._v(" "),
                               _c("td", [_vm._v(_vm._s(i.nombre))]),
                               _vm._v(" "),
                               _c("td", [
@@ -42622,7 +42677,8 @@ var render = function() {
                                     staticClass: "btn btn-dark btn-sm ",
                                     attrs: {
                                       type: "button",
-                                      href: "../cer/" + i.id,
+                                      href:
+                                        "../" + i.certificado.url + "/" + i.ci,
                                       target: "_blank"
                                     }
                                   },
@@ -42671,6 +42727,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("#")]),
         _vm._v(" "),
         _c("th", [_vm._v("Nombre")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Url")]),
         _vm._v(" "),
         _c("th", [_vm._v("Fecha")]),
         _vm._v(" "),
@@ -42811,10 +42869,7 @@ var staticRenderFns = [
       _c(
         "h5",
         { staticClass: "modal-title ", attrs: { id: "exampleModalLabel3" } },
-        [
-          _c("i", { staticClass: "fa fa-plus-circle" }),
-          _vm._v(" Modificar curso")
-        ]
+        [_c("i", { staticClass: "fa fa-plus-circle" }), _vm._v(" Estudiantes")]
       ),
       _vm._v(" "),
       _c(
@@ -42872,6 +42927,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("tr", [
       _c("th", [_vm._v("ID")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Carnet de identidad")]),
       _vm._v(" "),
       _c("th", [_vm._v("Nombre Completo")]),
       _vm._v(" "),

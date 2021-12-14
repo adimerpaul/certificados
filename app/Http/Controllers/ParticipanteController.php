@@ -39,7 +39,7 @@ class ParticipanteController extends Controller
      */
     public function show($id)
     {
-        return Participante::where('certificado_id',$id)->get();
+        return Participante::where('certificado_id',$id)->with('certificado')->get();
     }
 
     /**

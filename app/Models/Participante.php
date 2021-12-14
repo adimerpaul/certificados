@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Participante extends Model
 {
     use HasFactory;
-    protected $fillable=['nombre','hash','certificado_id'];
+    protected $fillable=['nombre','ci','hash','certificado_id'];
     public function certificado(){
         return$this->belongsTo(Certificado::class)->with('detalle');
     }
